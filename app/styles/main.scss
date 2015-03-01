@@ -1,29 +1,48 @@
-
-// Custom Styles
-body {
+html{
   background: #fafafa;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
+  height: 100%;
+}
+body {
+    overflow: hidden;
+    min-height: 100%;
 }
 
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 600px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
+.fullBg {
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
-.hero {
-  display: inline-block;
-  /* width: 25%; */
-  vertical-align: top;
+.words {
+    position: absolute;
+    right: 35px;
+    bottom: 35px;
+    z-index: 110;
+    float: none;
+    clear: both;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto Slab", serif;
+    text-align: right;
+    color:white;
+    text-shadow: 1px 1px 1px #000, 3px 3px 5px black;
+}
+
+.words h1 {
+
+  font-size:7em;
+
+}
+
+.words h2 {
+  font-size: 4em;
+}
+
+.words li {
+    cursor: pointer;
+}
+
+.words a {
+    background-color: rgba(255, 255, 255, 0.50);
 }
