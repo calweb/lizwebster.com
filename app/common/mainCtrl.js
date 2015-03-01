@@ -3,7 +3,6 @@
   angular.module("lizwebster")
     .controller("MainCtrl", function ($timeout, photoService) {
       var main = this;
-      // main.myMom = [];
       photoService.getPhotos().then(function (photos) {
         main.myMom = photos.data.photoset.photo;
         console.log(main.myMom);
@@ -40,7 +39,7 @@
 
    main.progress = 0;
    main.loaded = true;
-   main.currentIndex = 1;
+   main.currentIndex = 0;
    main.currentAnimation = 'fade-in';
 
    main.setCurrentSlideIndex = setCurrentSlideIndex;
@@ -100,5 +99,5 @@
       }
     }
   });
-  
+
 })();

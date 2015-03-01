@@ -6,6 +6,9 @@
           templateUrl: "common/views/main.html",
           controller: "MainCtrl as main"
         })
+        .when('/stories', {
+          templateUrl: "common/views/stories.html"
+        })
         .when('/not-found', {
           templateUrl: "common/views/not-found.html"
         })
