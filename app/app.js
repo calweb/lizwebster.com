@@ -29,6 +29,7 @@
       photosetId: '72157648764240703',
       format: 'json'
     });
+    app.constant('_', _);
 
 }(angular.module("lizwebster", [
     'ngRoute',
