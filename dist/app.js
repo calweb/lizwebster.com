@@ -29,6 +29,7 @@
       photosetId: '72157648764240703',
       format: 'json'
     });
+    app.constant('_', _);
 
 }(angular.module("lizwebster", [
     'ngRoute',
@@ -39,17 +40,18 @@
 (function () {
   "use strict";
   angular.module("lizwebster")
-    .controller("MainCtrl", function ($timeout, photoService) {
+    .controller("MainCtrl", function ($timeout, photoService, _) {
+
       var main = this;
       photoService.getPhotos().then(function (photos) {
-        main.myMom = photos.data.photoset.photo;
+        main.myMom = _.shuffle(photos.data.photoset.photo);
         console.log(main.myMom);
 
       });
 
       main.notFound = "We're sorry, but the page you requested is not found."
 
-      var INTERVAL = 6000;
+  var INTERVAL = 6000;
 
    function setCurrentSlideIndex(index) {
        main.currentIndex = index;
@@ -77,7 +79,7 @@
 
    main.progress = 0;
    main.loaded = true;
-   main.currentIndex = 0;
+   main.currentIndex = 1;
    main.currentAnimation = 'fade-in';
 
    main.setCurrentSlideIndex = setCurrentSlideIndex;
@@ -111,10 +113,10 @@
 
             var widthratio = winwidth / bgwidth;
             var heightratio = winheight / bgheight;
-
+console.log('heightratio: ',heightratio);
             var widthdiff = heightratio * bgwidth;
             var heightdiff = widthratio * bgheight;
-
+console.log('heightdiff: ', heightdiff);
             if (heightdiff > winheight) {
                 element.css({
                     width: winwidth + 'px',
